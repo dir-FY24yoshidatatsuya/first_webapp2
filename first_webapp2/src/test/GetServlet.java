@@ -8,36 +8,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloServlet
+ * Servlet implementation class GetServlet
  */
-@WebServlet("/HelloServlet")
-public class HelloServlet extends HttpServlet {
+@WebServlet("/GetServlet")
+public class GetServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public HelloServlet() {
-        super();
+    public GetServlet() {
         // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-	        throws ServletException, IOException {
-	    response.setContentType("text/html; charset=UTF-8");
-	    var out = response.getWriter();
-	    out.println("<html>");
-	    out.println("<head>");
-	    out.println("<title>はじめてのサーブレット</title>");
-	    out.println("</head>");
-	    out.println("<body>");
-	    out.println("こんにちは、サーブレットの世界へ！！");
-	    out.println("</body>");
-	    out.println("</html>");
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.sendRedirect("/first_webapp/VCServlet");
+    }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
